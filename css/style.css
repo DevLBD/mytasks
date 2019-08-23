@@ -10,7 +10,7 @@
   100% {background-position: 100 100%;}
 }
 
-html {
+html{
   background: repeating-radial-gradient(yellow, rgb(255, 153, 0), orange, rgb(255, 72, 0), red, rgb(255, 25, 25), rgb(141, 31, 16));
   background-size: 250% 250%;
   animation: gradient 3.5s ease-in-out alternate infinite;
