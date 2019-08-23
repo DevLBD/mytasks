@@ -18,6 +18,27 @@ html{
 
 /* Alternative to "radial-gradient": linear-gradient(-35deg, rgb(255, 187, 0), rgb(184, 0, 0)); */
 
+.todos::-webkit-scrollbar {
+  border-radius: 10px;
+  width: 0.5em;
+}
+
+.todos::-webkit-scrollbar-track {
+  background: white;
+  
+} 
+
+.todos::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-radius: 10px;
+} 
+
+* {
+    padding: 10px;
+    margin: 0;
+    font-family: "Source Sans Pro", sans-serif;
+  }  
+
 .todo-wrapper {
     border: none;
     border-radius: 10px;
