@@ -53,6 +53,7 @@ html{
 li {
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 800;
+    cursor: default;
 }
 
 li.completed {
@@ -63,24 +64,28 @@ h1 {
     color: #272727;
     font-size: 96px;
     font-weight: 700;
+    cursor: default;
   }
   
   h2 {
     color: #151515;
     font-size: 64px;
     font-weight: 700;
+    cursor: default;
   }
   
   h2.sub {
     color: #151515;
     font-size: 40px;
     font-weight: 650;
+    cursor: default;
   }
 
   h2.subwhite {
     color: #ffffff;
     font-size: 40px;
     font-weight: 650;
+    cursor: default;
   }
   
   h5 {
@@ -89,6 +94,7 @@ h1 {
     font-size: 24px;
     font-weight: 900;
     text-transform: uppercase;
+    cursor: default;
   }
   
   h5.sub {
@@ -98,6 +104,7 @@ h1 {
     font-weight: 1000;
     font-family: "Poppins";
     text-transform: uppercase;
+    cursor: default;
   }
   
   h5.white {
@@ -106,6 +113,7 @@ h1 {
     font-size: 24px;
     font-weight: 900;
     text-transform: uppercase;
+    cursor: default;
   }
 
   h5.black {
@@ -114,6 +122,7 @@ h1 {
     font-size: 34px;
     font-weight: 1000;
     text-transform: uppercase;
+    cursor: default;
   }
   
   h6 {
@@ -121,6 +130,7 @@ h1 {
     font-size: 24px;
     font-weight: 600;
     text-transform: uppercase;
+    cursor: default;
   }
   
   p.description {
@@ -128,7 +138,7 @@ h1 {
     font-size: 24px;
     font-weight: 10;
     font-family: "Source Sans Pro", sans-serif;
-    
+    cursor: default;
    } 
   
    p.black {
@@ -136,7 +146,7 @@ h1 {
     font-size: 24px;
     font-weight: 800;
     font-family: "Source Sans Pro", sans-serif;
-    
+    cursor: default;
    } 
   
    p.little {
@@ -144,7 +154,7 @@ h1 {
     font-size: 16px;
     font-weight: 14;
     font-family: "Source Sans Pro", sans-serif;
-    
+    cursor: default;
    } 
 
    p.littlewhite {
@@ -152,7 +162,7 @@ h1 {
     font-size: 16px;
     font-weight: 14;
     font-family: "Source Sans Pro", sans-serif;
-    
+    cursor: default;
    } 
   
    p.new {
@@ -160,7 +170,7 @@ h1 {
     font-size: 16px;
     font-weight: bold;
     font-family: "Poppins";
-    
+    cursor: default;
    } 
   
    p.newbold {
@@ -168,7 +178,7 @@ h1 {
     font-size: 24px;
     font-weight: 1000;
     font-family: "Poppins";
-    
+    cursor: default;
    } 
 
    .container {
