@@ -55,6 +55,15 @@ html{
     overflow-y: scroll;
 }
 
+.privacy {
+  border: none;  
+  border-radius: 15px;
+  width: 425px;
+  height: 290px;
+  color: black;
+  overflow-y: scroll;
+}
+
 li {
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 800;
@@ -139,7 +148,7 @@ h1 {
   }
   
   p.description {
-    color: white;
+    color: black;
     font-size: 24px;
     font-weight: 10;
     font-family: "Source Sans Pro", sans-serif;
@@ -258,4 +267,8 @@ h1 {
 .form {
   width: 200px;
   border: solid 1px, gray;
+}
+
+a.mail {
+  color: black;
 }
