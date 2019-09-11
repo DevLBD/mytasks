@@ -24,6 +24,11 @@ html{
     font-family: "Source Sans Pro", sans-serif;
   }  
 
+*::selection {
+  color: white;
+  background-color: red;
+}
+
 .todo-wrapper {
     border: none;
     border-radius: 10px;
