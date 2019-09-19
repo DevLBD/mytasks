@@ -70,11 +70,11 @@ function saveList() {
 
         }
 
-        if (localStorage.getItem("toDos") != null) {
         localStorage.setItem("toDos", JSON.stringify(toDos));
     }
 
 function loadList() {
+    if (localStorage.getItem("toDos") != null) {
         var toDos = JSON.parse(localStorage.getItem("toDos"));
 
         for (var i = 0; i < toDos.length; i++) { 

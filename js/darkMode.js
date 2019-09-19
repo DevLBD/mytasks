@@ -15,8 +15,6 @@ $(document).ready(function(){
       $("h5").toggleClass("open");
       $("li").toggleClass("open");
       $("p").toggleClass("open");
-      $(".form").toggleClass("open");
-      $("::placeholder").toggleClass("open");
       if (localStorage.getItem("darkToggled") == 1) {
         localStorage.setItem("darkToggled", "0");
       } else {
@@ -37,8 +35,6 @@ if (localStorage.getItem("darkToggled") == 1)  {
       $("h5").toggleClass("open");
       $("li").toggleClass("open");
       $("p").toggleClass("open");
-      $(".form").toggleClass("open");
-      $("::placeholder").toggleClass("open");
     });
 }
 
@@ -52,8 +48,6 @@ if (itsEvening == 1)  {
       $("h5").toggleClass("open");
       $("li").toggleClass("open");
       $("p").toggleClass("open");
-      $(".form").toggleClass("open");
-      $("::placeholder").toggleClass("open");
       localStorage.setItem("darkToggled", "1");
   });
 }
