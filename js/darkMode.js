@@ -1,8 +1,10 @@
 var data = new Date();
 var hours = data.getHours();
 
-if (hours > 18 && localStorage.getItem("darkToggled") == 0 && localStorage.getItem("preferenceSet") == null) {
+if (hours > 19 && localStorage.getItem("darkToggled") == null || localStorage.getItem("darkToggled") == 0  && localStorage.getItem("preferenceSet") == null) {
   var itsEvening = 1; 
+} else {
+  localStorage.setItem("darkToggled", "0")
 }
 
 $(document).ready(function(){
