@@ -36,7 +36,6 @@ function newToDoItem(itemText, completed) {
         var toDoItem = document.createElement("li");
         var toDoText = document.createTextNode(itemText);
         toDoItem.appendChild(toDoText);
-
         if (completed) {
             toDoItem.classList.add("completed");
         }

@@ -10,10 +10,18 @@
   100% {background-position: 100 100%;}
 }
 
-html{
+html {
   background: repeating-radial-gradient(yellow, rgb(255, 153, 0), orange, rgb(255, 72, 0), red, rgb(255, 25, 25), rgb(141, 31, 16));
   background-size: 250% 250%;
   animation: gradient 3.5s ease-in-out alternate infinite;
+  transition: all 0.3s ease 0s;
+}
+
+html.open {
+  background: repeating-radial-gradient(rgb(11, 152, 233), rgb(0, 2, 112), rgb(2, 0, 116), rgb(11, 0, 59), rgb(7, 0, 41));
+  background-size: 250% 250%;
+  animation: gradient 3.5s ease-in-out alternate infinite;
+  transition: all 0.3s ease 0s;
 }
 
 /* Alternative to "radial-gradient": linear-gradient(-35deg, rgb(255, 187, 0), rgb(184, 0, 0)); */
@@ -23,6 +31,7 @@ html{
     margin: 0;
     font-family: "Source Sans Pro", sans-serif;
   }  
+
 
 *::selection {
   color: white;
@@ -40,9 +49,26 @@ html{
     transition: all 0.3s ease 0s;
 }
 
+.todo-wrapper.open {
+  border: none;
+  border-radius: 10px;
+  background: rgb(20, 20, 20);
+  color: rgb(20, 20, 20);
+  width: 440px;
+  height: 595px;
+  box-shadow: 0px 15px 20px rgba(119, 119, 119, 0.212);
+  transition: all 0.3s ease 0s;
+}
+
 .todo-wrapper:hover {
   transition: all 0.3s ease 0s;
   box-shadow: 0px 15px 20px rgba(2, 2, 2, 0.37);  
+  transform: translateY(-3px)
+}
+
+.todo-wrapper.open:hover {
+  transition: all 0.3s ease 0s;
+  box-shadow: 0px 15px 20px rgba(184, 184, 184, 0.212);  
   transform: translateY(-3px)
 }
 
@@ -53,6 +79,15 @@ html{
     height: 235px;
     color: black;
     overflow-y: scroll;
+}
+
+.todos.open {
+  border: none;  
+  border-radius: 15px;
+  width: 400px;
+  height: 235px;
+  color: white;
+  overflow-y: scroll;
 }
 
 .privacy {
@@ -68,6 +103,13 @@ li {
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 800;
     cursor: default;
+}
+
+li.open {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 800;
+  cursor: default;
+  color: white;
 }
 
 li.completed {
@@ -109,6 +151,14 @@ h1 {
     font-weight: 900;
     text-transform: uppercase;
     cursor: default;
+  }
+
+  h5.black.open {
+    color: white;
+  }
+
+  p.black.open {
+    color: white;
   }
   
   h5.sub {
@@ -154,6 +204,10 @@ h1 {
     font-family: "Source Sans Pro", sans-serif;
     cursor: default;
    } 
+
+   p.description.open {
+     color: white;
+   }
   
    p.black {
     color: black;
@@ -227,6 +281,29 @@ h1 {
     cursor: pointer;
     }
 
+    .bt.open {
+      width: 150px;
+      height: 45px;
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      font-weight: 900;
+      color: black;
+      background-color: white;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+      }
+
+      .bt.open:hover {
+        background-color: black;
+            box-shadow: 0px 15px 20px rgba(49, 48, 48, 0.73);  
+        color: rgb(223, 220, 220);
+        transform: translateY(-3px);
+      }
+
     .bt:hover {
         background-color: rgb(223, 220, 220);
             box-shadow: 0px 15px 20px rgba(49, 48, 48, 0.73);  
@@ -249,6 +326,22 @@ h1 {
         transition: all 0.3s ease 0s;
         cursor: pointer;
         }
+
+        .btmy.open {
+          width: 155px;
+          height: 45px;
+          font-family: "Source Sans Pro", sans-serif;
+          font-size: 14px;
+          letter-spacing: 1px;
+          font-weight: 900;
+          color: black;
+          background-color: white;
+          border: none;
+          border-radius: 20px;
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease 0s;
+          cursor: pointer;
+          }
     
         .btmy:hover {
             background-color: rgb(233, 220, 220);
@@ -256,6 +349,59 @@ h1 {
             color: #000;
             transform: translateY(-3px);
           }
+
+          .btmy.open:hover {
+            background-color: black;
+                box-shadow: 0px 15px 20px rgba(49, 48, 48, 0.73);  
+            color: rgb(233, 220, 220);
+            transform: translateY(-3px);
+          }
+
+          .darkbt {
+            width: 45px;
+            height: 45px;
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+            font-weight: 900;
+            color: rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            }
+
+            .darkbt.open {
+              width: 45px;
+              height: 45px;
+              font-family: "Source Sans Pro", sans-serif;
+              font-size: 14px;
+              letter-spacing: 1px;
+              font-weight: 900;
+              color: black;
+              background-color: rgb(255, 255, 255);
+              border: none;
+              border-radius: 20px;
+              box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+              transition: all 0.3s ease 0s;
+              cursor: pointer;
+              }
+        
+            .darkbt:hover {
+                background-color: rgb(233, 220, 220);
+                    box-shadow: 0px 15px 20px rgba(49, 48, 48, 0.73);  
+                color: #000;
+                transform: translateY(-3px);
+              }
+
+              .darkbt.open:hover {
+                background-color: black;
+                    box-shadow: 0px 15px 20px rgba(240, 240, 240, 0.73);  
+                color: rgb(233, 220, 220);
+                transform: translateY(-3px);
+              }
 
 .page {
     padding: 10px;
