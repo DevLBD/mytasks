@@ -5,24 +5,23 @@ var data = new Date();
 var hours = data.getHours();
 
 // Checks if it's evening/night, if Dark Mode was toggled before, if a preference is set, and if it returns "true", toggles Dark Mode.
-if (hours > 19 || hours < 06 && localStorage.getItem("darkToggled") == 0 || localStorage.getItem("darkToggled") == null && localStorage.getItem("preferenceSet") == null ) {
+if (localStorage.getItem("preferenceSet") != 1 && hours > 19 || hours < 06) {
+  $(document).ready(function(){
+    $("html").addClass("open");
+    $(".darkbt").addClass("open");
+    $(".btmy").addClass("open");
+    $(".todo-wrapper").addClass("open");
+    $(".bt").addClass("open");
+    $("h5").addClass("open");
+    $("li").addClass("open");
+    $("p").addClass("open");
+    $(".form").addClass("open");
+  });
   var itsEvening = 1;
 } else {
-  if (localStorage.getItem("preferenceSet") == null) {
-    localStorage.setItem("darkToggled", "0");
-    $(document).ready(function(){
-      $("html").removeClass("open");
-      $(".darkbt").removeClass("open");
-      $(".btmy").removeClass("open");
-      $(".todo-wrapper").removeClass("open");
-      $(".bt").removeClass("open");
-      $("h5").removeClass("open");
-      $("li").removeClass("open");
-      $("p").removeClass("open");
-      $(".form").removeClass("open");
-    });
-  }
+  null
 }
+
 
 // Toggles Dark Mode and creates a JSON file to remember if Dark Mode was toggled before.
 $(document).ready(function(){
@@ -39,7 +38,11 @@ $(document).ready(function(){
       if (localStorage.getItem("darkToggled") == 1) {
         localStorage.setItem("darkToggled", "0");
       } else {
-        localStorage.setItem("darkToggled", "1");
+        if (itsEvening == 1) {
+          localStorage.setItem("darkToggled", "0");
+        } else {
+          localStorage.setItem("darkToggled", "1");
+        }
       }
       localStorage.setItem("preferenceSet", "1");
     });
@@ -58,22 +61,6 @@ if (localStorage.getItem("darkToggled") == 1)  {
       $("p").toggleClass("open");
       $(".form").toggleClass("open");
     });
-}
-
-// Activates Dark Mode when is evening.
-if (itsEvening == 1)  {
-  $(document).ready(function(){
-      $("html").toggleClass("open");
-      $(".darkbt").toggleClass("open");
-      $(".btmy").toggleClass("open");
-      $(".todo-wrapper").toggleClass("open");
-      $(".bt").toggleClass("open");
-      $("h5").toggleClass("open");
-      $("li").toggleClass("open");
-      $("p").toggleClass("open");
-      $(".form").toggleClass("open");
-      localStorage.setItem("darkToggled", "1");
-  });
 }
 
 // Adds white text when Dark Mode is enabled.
