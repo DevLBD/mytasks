@@ -1,10 +1,27 @@
-// Creates a variable with the hour set on the user's device.
+// Clears old variables and Creates a variable with the hour set on the user's device.
+var hours = 0;
+var itsEvening = 0;
 var data = new Date();
 var hours = data.getHours();
 
 // Checks if it's evening/night, if Dark Mode was toggled before, if a preference is set, and if it returns "true", toggles Dark Mode.
-if (hours > 19 && hours < 5 && localStorage.getItem("darkToggled") == null || localStorage.getItem("darkToggled") == 0  && localStorage.getItem("preferenceSet") == null) {
-  var itsEvening = 1; 
+if (hours > 19 || hours < 06 && localStorage.getItem("darkToggled") == 0 || localStorage.getItem("darkToggled") == null && localStorage.getItem("preferenceSet") == null ) {
+  var itsEvening = 1;
+} else {
+  if (localStorage.getItem("preferenceSet") == null) {
+    localStorage.setItem("darkToggled", "0");
+    $(document).ready(function(){
+      $("html").removeClass("open");
+      $(".darkbt").removeClass("open");
+      $(".btmy").removeClass("open");
+      $(".todo-wrapper").removeClass("open");
+      $(".bt").removeClass("open");
+      $("h5").removeClass("open");
+      $("li").removeClass("open");
+      $("p").removeClass("open");
+      $(".form").removeClass("open");
+    });
+  }
 }
 
 // Toggles Dark Mode and creates a JSON file to remember if Dark Mode was toggled before.
