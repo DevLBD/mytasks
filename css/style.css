@@ -18,7 +18,7 @@ html {
 }
 
 html.open {
-  background: repeating-radial-gradient(rgb(0, 117, 185), rgb(0, 59, 185), rgb(2, 25, 129), rgb(0, 43, 136), rgb(2, 0, 116), rgb(11, 0, 59), rgb(7, 0, 41));
+  background: repeating-radial-gradient(rgb(0, 117, 185), rgb(0, 59, 185), rgb(2, 25, 129), rgb(0, 22, 68), rgb(1, 0, 59), rgb(10, 0, 53), rgb(7, 0, 41));
   background-size: 250% 250%;
   animation: gradient 3.5s ease-in-out alternate infinite;
   transition: all 0.3s ease 0s;
@@ -103,6 +103,7 @@ li {
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 800;
     cursor: default;
+    transition: all 0.45s ease 0s;
 }
 
 li.open {
@@ -114,6 +115,7 @@ li.open {
 
 li.completed {
     color: red;
+    transition: all 0.45s ease 0s;
 }
 
 h1 {
