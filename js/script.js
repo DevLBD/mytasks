@@ -1,3 +1,4 @@
+// Adds tasks on list.
 var addButton = document.getElementById("add-button");
 addButton.addEventListener("click", addToDoItem);
 function addToDoItem() {
@@ -5,6 +6,7 @@ function addToDoItem() {
     newToDoItem(itemText, false);
 }
 
+// Clears completed items.
 var clearButton = document.getElementById("clear-completed-button");
 clearButton.addEventListener("click", clearCompletedItems);
 function clearCompletedItems() {
@@ -15,6 +17,7 @@ function clearCompletedItems() {
     }
 }
 
+// Clears all items.
 var emptyButton = document.getElementById("empty-button");
 emptyButton.addEventListener("click", emptyItems);
 function emptyItems() {
@@ -24,12 +27,14 @@ function emptyItems() {
     }
 }
 
+// Saves tasks on list.
 var saveButton = document.getElementById("save-button");
 saveButton.addEventListener("click", saveList);
 function saveItems() {
     alert("Save Items button clicked!");
 }
-   
+  
+// Creates tasks on screen.
 var toDoEntryBox = document.getElementById("todo-entry-box");
 var toDoList = document.getElementById("todo-list");
 function newToDoItem(itemText, completed) {
@@ -44,6 +49,7 @@ function newToDoItem(itemText, completed) {
         toDoItem.addEventListener("dblclick", toggleToDoItemState);
     }
 
+// Marks the task as completed if double clicked.
 function toggleToDoItemState() {
     if (this.classList.contains("completed")) {
         this.classList.remove("completed");
@@ -57,6 +63,7 @@ var toDoInfo = {
     completed: false
 };
 
+// Creates a JSON file with a list of saved tasks when "Save your list" button is clicked.
 function saveList() {
     var toDos = [];
 
@@ -73,6 +80,7 @@ function saveList() {
         localStorage.setItem("toDos", JSON.stringify(toDos));
     }
 
+// Loads the list when opening the page.
 function loadList() {
     if (localStorage.getItem("toDos") != null) {
         var toDos = JSON.parse(localStorage.getItem("toDos"));
@@ -85,4 +93,5 @@ function loadList() {
     }
 }
 
+// Calls the "loadList" function when opening the page.
 loadList();
