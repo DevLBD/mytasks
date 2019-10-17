@@ -75,6 +75,7 @@ $(document).ready(function(){
 // Reset Mode preference.
 $(document).ready(function(){
   $(".darkbt").dblclick(function() {
-    localStorage.removeItem("preferenceSet")
+    localStorage.removeItem("preferenceSet");
+    localStorage.removeItem("darkToggled");
   });
 });
