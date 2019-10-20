@@ -118,33 +118,20 @@ li.completed {
     transition: all 0.45s ease 0s;
 }
 
-h1 {
-    color: #272727;
-    font-size: 96px;
-    font-weight: 700;
-    cursor: default;
-  }
-  
-  h2 {
-    color: #151515;
-    font-size: 64px;
-    font-weight: 700;
-    cursor: default;
-  }
-  
-  h2.sub {
-    color: #151515;
-    font-size: 40px;
-    font-weight: 650;
-    cursor: default;
-  }
+li::selection {
+  background-color: transparent;
+  color: black;
+}
 
-  h2.subwhite {
-    color: #ffffff;
-    font-size: 40px;
-    font-weight: 650;
-    cursor: default;
-  }
+li.open::selection {
+  background-color: transparent;
+  color: white;
+}
+
+li.completed::selection {
+  background-color: transparent;
+  color: red;
+}
   
   h5 {
     padding: 10px;
@@ -163,16 +150,6 @@ h1 {
     color: white;
   }
   
-  h5.sub {
-    padding: 10px;
-    color: black;
-    font-size: 34px;
-    font-weight: 1000;
-    font-family: "Poppins";
-    text-transform: uppercase;
-    cursor: default;
-  }
-  
   h5.white {
     padding: 10px;
     color: white;
@@ -187,14 +164,6 @@ h1 {
     color: black;
     font-size: 34px;
     font-weight: 1000;
-    text-transform: uppercase;
-    cursor: default;
-  }
-  
-  h6 {
-    color: grey;
-    font-size: 24px;
-    font-weight: 600;
     text-transform: uppercase;
     cursor: default;
   }
@@ -232,22 +201,6 @@ h1 {
     font-size: 16px;
     font-weight: 14;
     font-family: "Source Sans Pro", sans-serif;
-    cursor: default;
-   } 
-  
-   p.new {
-    color: black;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: "Poppins";
-    cursor: default;
-   } 
-  
-   p.newbold {
-    color: black;
-    font-size: 24px;
-    font-weight: 1000;
-    font-family: "Poppins";
     cursor: default;
    } 
 
@@ -432,6 +385,20 @@ h1 {
   background-color: rgba(255, 255, 255, 0.055);
   color: white;
 }
+
+a {
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 17px;
+  transition: all 0.3s ease 0s;
+}
+
+a:hover {
+  color: rgb(145, 145, 145);
+  transition: all 0.3s ease 0s;
+  text-decoration: wavy;
+}
+
 
 a.mail {
   color: black;
