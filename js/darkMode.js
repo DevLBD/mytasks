@@ -6,7 +6,7 @@ var hours = data.getHours();
 var metaThemeColor = document.querySelector("meta[name=theme-color]");
 
 // Checks if it's evening/night, if a preference is set, and if it returns "true", toggles Dark Mode.
-if (localStorage.getItem("preferenceSet") != 1 && hours > 19 || hours < 06) {
+if (localStorage.getItem("preferenceSet") != 1 && hours >= 19 || hours <= 06) {
   $(document).ready(function(){
     $("html").addClass("open");
     $(".darkbt").addClass("open");
@@ -103,3 +103,6 @@ function changeThemeColorBlue() {
 function changeThemeColorRed() {
   metaThemeColor.setAttribute("content", "red");
 }
+
+// Made with love in Pescara, Italy.
+// Copyright © 2019, Lorenzo Barretta.

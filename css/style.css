@@ -100,6 +100,15 @@ html.open {
   overflow-y: scroll;
 }
 
+.help {
+  border: none;  
+  border-radius: 15px;
+  width: 415px;
+  height: 290px;
+  color: black;
+  overflow-y: scroll;
+}
+
 li {
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 800;
@@ -172,7 +181,7 @@ li.completed::selection {
   p.description {
     color: black;
     font-size: 24px;
-    font-weight: 10;
+    font-weight: 300;
     font-family: "Source Sans Pro", sans-serif;
     cursor: default;
    } 
@@ -317,7 +326,7 @@ li.completed::selection {
             width: 45px;
             height: 45px;
             font-family: "Source Sans Pro", sans-serif;
-            font-size: 14px;
+            font-size: 18.5px;
             letter-spacing: 1px;
             font-weight: 900;
             color: rgb(255, 255, 255);
@@ -333,7 +342,7 @@ li.completed::selection {
               width: 45px;
               height: 45px;
               font-family: "Source Sans Pro", sans-serif;
-              font-size: 14px;
+              font-size: 18.5px;
               letter-spacing: 1px;
               font-weight: 900;
               color: black;
@@ -368,6 +377,7 @@ li.completed::selection {
 
 .form {
   width: 200px;
+  height: 19px;
   border-bottom: solid 2px black;
   border-top: solid transparent;
   border-right: solid transparent;
@@ -378,6 +388,7 @@ li.completed::selection {
 
 .form.open {
   width: 200px;
+  height: 19px;
   border-bottom: solid 2px white;
   border-top: solid transparent;
   border-right: solid transparent;
@@ -397,10 +408,27 @@ a {
 a:hover {
   color: rgb(145, 145, 145);
   transition: all 0.3s ease 0s;
-  text-decoration: wavy;
 }
-
 
 a.mail {
   color: black;
+}
+
+#save-button.red {
+  background-color: rgb(175, 0, 0);
+}
+
+#save-button.red:hover {
+  color: white;
+  background-color: rgb(220, 0, 0);
+}
+
+#save-button.red.open {
+  color: white; 
+  background-color: rgb(175, 0, 0);
+}
+
+#save-button.red.open:hover {
+  color: white;
+  background-color: rgb(220, 0, 0);
 }

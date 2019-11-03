@@ -49,13 +49,16 @@ function newToDoItem(itemText, completed) {
         toDoItem.addEventListener("dblclick", toggleToDoItemState);
     }
 
-// Marks the task as completed if double clicked.
+// Marks the task as completed if double clicked and makes the "Save your list" button red.
 function toggleToDoItemState() {
     if (this.classList.contains("completed")) {
         this.classList.remove("completed");
     } else {
         this.classList.add("completed");
     }
+    $(document).ready(function(){
+        $("#save-button").addClass("red");
+    });
 }
 
 var toDoInfo = {
@@ -95,3 +98,6 @@ function loadList() {
 
 // Calls the "loadList" function when opening the page.
 loadList();
+
+// Made with love in Pescara, Italy.
+// Copyright © 2019, Lorenzo Barretta.
