@@ -180,7 +180,7 @@ li.completed::selection {
   
   p.description {
     color: black;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 300;
     font-family: "Source Sans Pro", sans-serif;
     cursor: default;
@@ -264,14 +264,14 @@ li.completed::selection {
 
       .bt.open:hover {
         background-color: black;
-            box-shadow: 0px 15px 20px rgba(49, 48, 48, 0.73);  
+        box-shadow: 0px 15px 20px rgba(49, 48, 48, 0.73);  
         color: rgb(223, 220, 220);
         transform: translateY(-3px);
       }
 
     .bt:hover {
         background-color: rgb(223, 220, 220);
-            box-shadow: 0px 15px 20px rgba(49, 48, 48, 0.73);  
+        box-shadow: 0px 15px 20px rgba(49, 48, 48, 0.73);  
         color: #000;
         transform: translateY(-3px);
       }
@@ -310,14 +310,14 @@ li.completed::selection {
     
         .btmy:hover {
             background-color: rgb(233, 220, 220);
-                box-shadow: 0px 15px 20px rgba(49, 48, 48, 0.73);  
+            box-shadow: 0px 15px 20px rgba(49, 48, 48, 0.73);  
             color: #000;
             transform: translateY(-3px);
           }
 
           .btmy.open:hover {
             background-color: black;
-                box-shadow: 0px 15px 20px rgba(49, 48, 48, 0.73);  
+            box-shadow: 0px 15px 20px rgba(49, 48, 48, 0.73);  
             color: rgb(233, 220, 220);
             transform: translateY(-3px);
           }
@@ -356,14 +356,14 @@ li.completed::selection {
         
             .darkbt:hover {
                 background-color: rgb(233, 220, 220);
-                    box-shadow: 0px 15px 20px rgba(49, 48, 48, 0.73);  
+                box-shadow: 0px 15px 20px rgba(49, 48, 48, 0.73);  
                 color: #000;
                 transform: translateY(-3px);
               }
 
               .darkbt.open:hover {
                 background-color: black;
-                    box-shadow: 0px 15px 20px rgba(240, 240, 240, 0.73);  
+                box-shadow: 0px 15px 20px rgba(240, 240, 240, 0.73);  
                 color: rgb(233, 220, 220);
                 transform: translateY(-3px);
               }
@@ -431,4 +431,30 @@ a.mail {
 #save-button.red.open:hover {
   color: white;
   background-color: rgb(220, 0, 0);
+}
+
+.hidden {
+  display: none;
+}
+
+.intro {
+  border-radius: 15px;
+  background-color: rgb(230, 230, 230);
+  transition: all 0.3s ease 0s;
+}
+
+.intro.open {
+  border-radius: 15px;
+  background-color: rgb(34, 34, 34);
+  transition: all 0.3s ease 0s;
+}
+
+.intro:hover {
+  transform: translateY(-1px);
+  box-shadow: 0px 15px 20px rgba(49, 48, 48, 0.315);
+}
+
+.intro.open:hover {
+  transform: translateY(-1px);
+  box-shadow: 0px 15px 20px rgba(95, 93, 93, 0.315);
 }

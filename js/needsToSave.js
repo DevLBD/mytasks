@@ -21,9 +21,11 @@ $(document).ready(function(){
   
 // Makes the "Save your list" button red if the user marks a task as completed. 
   $(document).ready(function(){
-    $("li").dblclick(function() {
-      $("#save-button").addClass("red");
-    });
+    if (sessionStorage.getItem("contentEditable") != 1) {
+      $("li").click(function() {
+        $("#save-button").addClass("red");
+      });
+    }
   });
 
 // Makes the "Save your list" button black (or white, if Dark Mode is activated) if the user clicks it.
@@ -32,6 +34,13 @@ $(document).ready(function(){
       $("#save-button").removeClass("red");
     });
   });
+
+// Checks if the list is editable and, if it is, it remembers the user to save their changes.
+  $(document).ready(function(){
+    if (sessionStorage.getItem("contentEditable") != 0) {
+      $("#save-button").addClass("red");
+    }
+  })
 
 // Made with love in Pescara, Italy.
 // Copyright © 2019, Lorenzo Barretta.

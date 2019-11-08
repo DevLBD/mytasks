@@ -17,6 +17,7 @@ if (localStorage.getItem("preferenceSet") != 1 && hours >= 19 || hours <= 06) {
     $("li").addClass("open");
     $("p").addClass("open");
     $(".form").addClass("open");
+    $(".intro").toggleClass("open");
   });
   var itsEvening = 1;
   changeThemeColorBlue();
@@ -45,6 +46,7 @@ $(document).ready(function(){
       $("li").toggleClass("open");
       $("p").toggleClass("open");
       $(".form").toggleClass("open");
+      $(".intro").toggleClass("open");
       if (localStorage.getItem("darkToggled") == 1) {
         localStorage.setItem("darkToggled", "0");
         changeThemeColorRed();
@@ -73,6 +75,7 @@ if (localStorage.getItem("darkToggled") == 1 && localStorage.getItem("preference
       $("li").toggleClass("open");
       $("p").toggleClass("open");
       $(".form").toggleClass("open");
+      $(".intro").toggleClass("open");
       changeThemeColorBlue();
     });
 }

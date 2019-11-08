@@ -12,43 +12,52 @@
         <meta name="theme-color" content="red">
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=0.77, user-scalable=no">
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="My Tasks • Created by Lorenzo Barretta (@dev.lbd)">
+        <meta name="twitter:title" content="My Tasks • Created by Lorenzo Barretta, (@dev.lbd)">
         <meta name="twitter:description" content="A simple Web App that helps you remember your commitments.">
         <meta name="twitter:creator" content="@DevLBD">
         <meta name="twitter:site" content="@DevLBD">
-        <meta property="twitter:image" content="https://devlbd.github.io/resources/twttrtwo.png">
+        <meta property="twitter:image" content="https://devlbd.github.io/resources/mytasks/twttr.png">
         <meta property="og:url" content="https://devlbd.github.io/mytasks/">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="My Tasks • Created by Lorenzo Barretta (@dev.lbd)">
+        <meta property="og:title" content="My Tasks • Created by Lorenzo Barretta, (@dev.lbd)">
         <meta property="og:description"content="A simple Web App that helps you remember your commitments.">
-        <meta property="og:image" content="https://devlbd.github.io/resources/fb.png">
+        <meta property="og:image" content="https://devlbd.github.io/mytasks/resources/fb.png">
     </head>
     <body link="white" vlink="white" alink="white"> 
         <div class="page">
         <article class="todo-wrapper">
             <h5 class="black">My Tasks</h5>
-            <p class="black">Double tap an item to mark it as completed.</p>
+            <p class="black">Double tap an item to edit it.<br>Tap an item to mark it as completed.</p>
             <div class="container">
                 <br>
                 <form name="todo-adder">
-                    <input class="form" type="text" autocomplete="off" autofocus maxlength="65" placeholder="What do you want to remember?" id="todo-entry-box"/>
+                    <input class="form" type="text" autocomplete="off" autofocus maxlength="95" placeholder="What do you want to remember?" id="todo-entry-box"/>
                 </form>
-                <button id="add-button" class="bt">Add</button>
+                <button id="add-button" class="bt" title="Click to add a task to your list.">Add</button>
                 <p>
-                    <button class="darkbt" title="Enables or Disables Dark Mode.">🌃</button>
+                    <button class="darkbt" title="Click to enable or disable Dark Mode.">🌃</button>
                 </p>
             </div>
             <article class="todos">
+                <div class="intro hidden">
+                    <p class="black" align="center">Nothing to see here - yet.</p>
+                    <p class="description" align="center">Write something in the form and click "Add" to make that appear here.</p>
+                    <div class="buttons">
+                        <a href="https://devlbd.github.io/mytasks/help">
+                            <button class="btmy" title="Click to learn how to use the app in the best way.">Help</button>
+                        </a>
+                    </div>
+                </div>
             <ol id="todo-list">
             </ol>
             </article>
             <br> <br> <br>
             <div class="buttons">
-                    <button id="clear-completed-button" class="btmy">Clear marked</button>
+                    <button id="clear-completed-button" class="btmy" title="Press C on your keyboard to delete completed tasks quickly.">Clear marked</button>
                     <p></p>
-                    <button id="empty-button" class="btmy">Clear all</button>
+                    <button id="empty-button" class="btmy" title="Press A on your keyboard to delete your list quickly.">Clear all</button>
                     <p></p>
-                    <button id="save-button" class="btmy">Save your list</button>
+                    <button id="save-button" class="btmy" title="Press S on your keyboard to save your list quickly.">Save your list</button>
             </div>
         </article> 
         </div>

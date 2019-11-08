@@ -4,6 +4,9 @@ addButton.addEventListener("click", addToDoItem);
 function addToDoItem() {
     var itemText = toDoEntryBox.value;
     newToDoItem(itemText, false);
+    $(document).ready(function(){
+        $(".intro").addClass("hidden");
+    });
 }
 
 // Clears completed items.
@@ -30,9 +33,6 @@ function emptyItems() {
 // Saves tasks on list.
 var saveButton = document.getElementById("save-button");
 saveButton.addEventListener("click", saveList);
-function saveItems() {
-    alert("Save Items button clicked!");
-}
   
 // Creates tasks on screen.
 var toDoEntryBox = document.getElementById("todo-entry-box");
@@ -46,25 +46,22 @@ function newToDoItem(itemText, completed) {
         }
 
         toDoList.appendChild(toDoItem);
-        toDoItem.addEventListener("dblclick", toggleToDoItemState);
+        toDoItem.addEventListener("click", toggleToDoItemState);
     }
 
 // Marks the task as completed if double clicked and makes the "Save your list" button red.
 function toggleToDoItemState() {
-    if (this.classList.contains("completed")) {
-        this.classList.remove("completed");
-    } else {
-        this.classList.add("completed");
+    if (sessionStorage.getItem("contentEditable") != 1) {
+        if (this.classList.contains("completed")) {
+            this.classList.remove("completed");
+        } else {
+            this.classList.add("completed");
+        }
+        $(document).ready(function(){
+            $("#save-button").addClass("red");
+        });
     }
-    $(document).ready(function(){
-        $("#save-button").addClass("red");
-    });
 }
-
-var toDoInfo = {
-    "task": "Thing I need to do",
-    completed: false
-};
 
 // Creates a JSON file with a list of saved tasks when "Save your list" button is clicked.
 function saveList() {
@@ -81,6 +78,17 @@ function saveList() {
         }
 
         localStorage.setItem("toDos", JSON.stringify(toDos));
+        $(document).ready(function(){
+            $("li").attr("contenteditable", "false");
+            sessionStorage.setItem("contentEditable", "0");
+        });
+
+        var savedListAfterSave = localStorage.getItem("toDos");
+        if (savedListAfterSave == "[]") {
+            $(document).ready(function(){
+                $(".intro").removeClass("hidden");
+            });
+        }
     }
 
 // Loads the list when opening the page.
@@ -93,11 +101,90 @@ function loadList() {
             newToDoItem(toDo.task, toDo.completed);
 
         }
+    } else {
+        $(document).ready(function(){
+            $(".intro").removeClass("hidden");
+        });
     }
 }
 
+// Removes the "hidden" class on the "intro" div if the user's list is empty.
+var savedList = localStorage.getItem("toDos");
+if (savedList == "[]") {
+    $(document).ready(function(){
+        $(".intro").removeClass("hidden");
+    });
+}
+
+// Makes the content editable when the user double clicks a task.
+$(document).ready(function(){
+    $("li").dblclick(function(){
+        $("li").attr("contenteditable", "true");
+        sessionStorage.setItem("contentEditable", "1");
+    });
+});
+
+// Makes the content uneditable and saves the list when the user presses the ENTER key on their keyboard.
+$(document).ready(function(){
+    $("li").keypress(function(e){
+        if (e.key == "Enter" || e.key == 13 && sessionStorage.getItem("contentEditable") == 1) {
+            $("li").attr("contenteditable", "false");
+            $("#save-button").removeClass("red");
+            sessionStorage.setItem("contentEditable", "0");
+            saveList();
+        }
+    });
+});
+
 // Calls the "loadList" function when opening the page.
 loadList();
+
+// Creates a temporary JSON file to remember if the content is Editable.
+sessionStorage.setItem("contentEditable", "0");
+
+// BETA: These features will be enabled in the next Version of the app. (5.0).
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Tells the app if the form is focused.
+var form = document.getElementById("todo-entry-box");
+form.addEventListener("focus", function(){
+    sessionStorage.setItem("formFocused", "1");
+});
+
+form.addEventListener("blur", function(){
+    sessionStorage.setItem("formFocused", "0");
+});
+    
+// Calls the "saveList" function when the user presses the S key on their keyboard. 
+$(document).ready(function(){
+    $("*").keypress(function(e){
+        if (e.key == "s" && sessionStorage.getItem("formFocused") != 1) {
+            $("#save-button").removeClass("red");
+            saveList();
+        }
+    });
+});
+
+// Calls the "clearCompletedItems" function when the user presses the C key on their keyboard. 
+$(document).ready(function(){
+    $("*").keypress(function(e){
+        if (e.key == "c" && sessionStorage.getItem("formFocused") != 1) {
+            $("#save-button").addClass("red");
+            clearCompletedItems();
+        }
+    });
+});
+
+// Calls the "emptyItems" function when the user presses the A key on their keyboard. 
+$(document).ready(function(){
+    $("*").keypress(function(e){
+        if (e.key == "a" && sessionStorage.getItem("formFocused") != 1) {
+            $("#save-button").addClass("red");
+            emptyItems();
+        }
+    });
+});
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */ 
+// BETA: These features will be enabled in the next Version of the app. (5.0).
 
 // Made with love in Pescara, Italy.
 // Copyright © 2019, Lorenzo Barretta.
