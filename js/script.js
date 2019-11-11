@@ -142,8 +142,7 @@ loadList();
 // Creates a temporary JSON file to remember if the content is Editable.
 sessionStorage.setItem("contentEditable", "0");
 
-// BETA: These features will be enabled in the next Version of the app. (5.0).
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 // Tells the app if the form is focused.
 var form = document.getElementById("todo-entry-box");
 form.addEventListener("focus", function(){
@@ -183,8 +182,6 @@ $(document).ready(function(){
         }
     });
 });
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */ 
-// BETA: These features will be enabled in the next Version of the app. (5.0).
 
 // Made with love in Pescara, Italy.
 // Copyright © 2019, Lorenzo Barretta.
