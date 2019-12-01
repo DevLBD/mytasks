@@ -81,6 +81,7 @@ function saveList() {
         $(document).ready(function(){
             $("li").attr("contenteditable", "false");
             sessionStorage.setItem("contentEditable", "0");
+            sessionStorage.setItem("formFocused", "0");
         });
 
         var savedListAfterSave = localStorage.getItem("toDos");
@@ -121,16 +122,18 @@ $(document).ready(function(){
     $("li").dblclick(function(){
         $("li").attr("contenteditable", "true");
         sessionStorage.setItem("contentEditable", "1");
+        sessionStorage.setItem("formFocused", "1");
     });
 });
 
-// Makes the content uneditable and saves the list when the user presses the ENTER key on their keyboard.
+// Makes the content uneditable and saves the list when the user press the ENTER key on their keyboard.
 $(document).ready(function(){
     $("li").keypress(function(e){
         if (e.key == "Enter" || e.key == 13 && sessionStorage.getItem("contentEditable") == 1) {
             $("li").attr("contenteditable", "false");
             $("#save-button").removeClass("red");
             sessionStorage.setItem("contentEditable", "0");
+            sessionStorage.setItem("formFocused", "0");
             saveList();
         }
     });
@@ -142,7 +145,6 @@ loadList();
 // Creates a temporary JSON file to remember if the content is Editable.
 sessionStorage.setItem("contentEditable", "0");
 
-
 // Tells the app if the form is focused.
 var form = document.getElementById("todo-entry-box");
 form.addEventListener("focus", function(){
@@ -153,7 +155,7 @@ form.addEventListener("blur", function(){
     sessionStorage.setItem("formFocused", "0");
 });
     
-// Calls the "saveList" function when the user presses the S key on their keyboard. 
+// Calls the "saveList" function when the user press the S key on their keyboard. 
 $(document).ready(function(){
     $("*").keypress(function(e){
         if (e.key == "s" && sessionStorage.getItem("formFocused") != 1) {
@@ -163,7 +165,7 @@ $(document).ready(function(){
     });
 });
 
-// Calls the "clearCompletedItems" function when the user presses the C key on their keyboard. 
+// Calls the "clearCompletedItems" function when the user press the C key on their keyboard. 
 $(document).ready(function(){
     $("*").keypress(function(e){
         if (e.key == "c" && sessionStorage.getItem("formFocused") != 1) {
@@ -173,7 +175,7 @@ $(document).ready(function(){
     });
 });
 
-// Calls the "emptyItems" function when the user presses the A key on their keyboard. 
+// Calls the "emptyItems" function when the user press the A key on their keyboard. 
 $(document).ready(function(){
     $("*").keypress(function(e){
         if (e.key == "a" && sessionStorage.getItem("formFocused") != 1) {
