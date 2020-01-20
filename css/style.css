@@ -410,6 +410,21 @@ a:hover {
   transition: all 0.3s ease 0s;
 }
 
+a.aLanguages {
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 17px;
+  transition: all 0.3s ease 0s;
+}
+
+a.aLanguages:hover {
+  color: rgb(228, 228, 228);
+  transition: all 0.3s ease 0s;
+  border: none;
+  border-radius: 15px;
+  background-color: rgba(44, 44, 44, 0.438);
+}
+
 a.mail {
   color: black;
 }
@@ -458,3 +473,60 @@ a.mail {
   transform: translateY(-1px);
   box-shadow: 0px 15px 20px rgba(95, 93, 93, 0.315);
 }
+
+.languages {
+  border-radius: 20px;
+  border: none;
+  background-color: black;
+  width: 190px;
+  height: 45px;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0px 15px 20px rgba(2, 2, 2, 0.212);
+}
+
+.languages.open {
+  border-radius: 20px;
+  border: none;
+  background-color: black;
+  width: 190px;
+  height: 45px;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0px 15px 20px rgba(119, 119, 119, 0.212);
+}
+
+.languages:hover {
+  border-radius: 20px;
+  border: none;
+  background-color: black;
+  width: 190px;
+  height: 45px;
+  transform: translateY(-1px);
+  transition: all 0.3s ease 0s;
+  box-shadow: 0px 15px 20px rgba(2, 2, 2, 0.37);  
+}
+
+.languages.open:hover {
+  border-radius: 20px;
+  border: none;
+  background-color: black;
+  width: 190px;
+  height: 45px;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0px 15px 20px rgba(184, 184, 184, 0.301); 
+}
+
+.active {
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(26, 26, 26);
+  width: 80px;
+  height: 5px;
+}
+
+.line {
+  background-color: rgba(0, 0, 0, 0.005);
+  height: 0px;
+  border: none;
+  border-radius: 15px;
+}
+

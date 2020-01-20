@@ -181,8 +181,39 @@ $(document).ready(function(){
         if (e.key == "a" && sessionStorage.getItem("formFocused") != 1) {
             $("#save-button").addClass("red");
             emptyItems();
+            // window.location.href = "https://devlbd.github.io"
         }
     });
+});
+
+$(document).ready(function(){
+    $("#langEng").click(function(){
+        localStorage.setItem("hasSetItalian", "0");
+    });
+});
+
+$(document).ready(function(){
+    $("#langIta").click(function(){
+        localStorage.setItem("hasSetItalian", "1");
+    });
+});
+
+// Reloads the page in Italian if the user wants to 250 ms after opening the app.
+$(document).ready(function(){
+    setTimeout(function(){
+        if (localStorage.getItem("hasSetItalian") == 1 && sessionStorage.getItem("pageIsItalian") != 1) {
+            window.location.href = "https://devlbd.github.io/mytasks/it"
+        }
+    }, 250);
+});
+
+// Reloads the page in English if the user wants to 250 ms after opening the app.
+$(document).ready(function(){
+    setTimeout(function(){
+        if (localStorage.getItem("hasSetItalian") != 1 && sessionStorage.getItem("pageIsItalian") == 1) {
+            window.location.href = "https://devlbd.github.io/mytasks/"
+        }
+    }, 250);
 });
 
 // Made with love in Pescara, Italy.
