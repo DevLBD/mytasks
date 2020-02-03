@@ -17,8 +17,11 @@ if (localStorage.getItem("preferenceSet") != 1 && hours >= 19 || hours <= 06) {
     $("li").addClass("open");
     $("p").addClass("open");
     $(".form").addClass("open");
-    $(".intro").toggleClass("open");
-    $(".languages").toggleClass("open");
+    $(".intro").addClass("open");
+    $(".languages").addClass("open");
+    $(".notificationask").addClass("open");
+    $("#disableNotifications").addClass("open");
+    $(".bell").addClass("open");
   });
   var itsEvening = 1;
   changeThemeColorBlue();
@@ -49,6 +52,9 @@ $(document).ready(function(){
       $(".form").toggleClass("open");
       $(".intro").toggleClass("open");
       $(".languages").toggleClass("open");
+      $(".notificationask").toggleClass("open");
+      $("#disableNotifications").toggleClass("open");
+      $(".bell").toggleClass("open");
       if (localStorage.getItem("darkToggled") == 1) {
         localStorage.setItem("darkToggled", "0");
         changeThemeColorRed();
@@ -79,6 +85,9 @@ if (localStorage.getItem("darkToggled") == 1 && localStorage.getItem("preference
       $(".form").toggleClass("open");
       $(".intro").toggleClass("open");
       $(".languages").toggleClass("open");
+      $(".notificationask").toggleClass("open");
+      $("#disableNotifications").toggleClass("open");
+      $(".bell").toggleClass("open");
       changeThemeColorBlue();
     });
 }

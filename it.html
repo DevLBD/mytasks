@@ -6,6 +6,7 @@
         </title>
         <link rel="stylesheet" href="css\style.css">
         <link rel="icon" href="resources\icon.ico">
+        <link rel="manifest" href="manifest.json">
         <meta name="description" content="This simple Web App allows you to make a list of things to do and save them to help you remember your commitments.">
         <meta name="author" content="Lorenzo Barretta">
         <meta name="keywords" content="Tasks,Commitments,Lorenzo Barretta,dev.lbd,devlbd,developer,HTML,CSS,JavaScript,Python,Programming,Projects,Google,Chrome">
@@ -66,6 +67,14 @@
         <script src="js\darkMode.js"></script>
         <script src="js\needsToSave.js"></script>
         <script src="js\langSelectorIt.js"></script>
+        <script>
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("/sw.js").then(function(){
+                    console.log("Good news!");
+                    console.log("Service Worker is now registered.");
+                });
+            }
+        </script>
         <br>
         <h5 class="white"><p align="center">Creato con ❤ in Pescara, Italia. <br> Copyright © 2019, Lorenzo Barretta.</p></h5>
         <p class="littlewhite" align="center"><a href="https://devlbd.github.io/mytasks/privacyit">Privacy</a> | <a href="https://devlbd.github.io/" target="_blank">Visita il Portfolio</a> | <a href="https://devlbd.github.io/mytasks/helpit">Aiuto</a></p>
@@ -75,6 +84,21 @@
         <div class="buttons">
             <div class="languages" align="center">
                 <p class="littlewhite"><a href="https://devlbd.github.io/mytasks" class="aLanguages" id="langEng">English</a> | <a href="https://devlbd.github.io/mytasks/it" class="active aLanguages" id="langIta">Italiano</a></p>
+            </div>
+            <p></p>
+            <button class="bell hiddden">🔔</button>
+        </div>
+        <div class="buttons">
+            <div class="notificationask notshowing hidden">
+                <p class="black">Vuoi attivare le notifiche?</p>
+                <p class="description notifs">Attiva le notifiche per ricordarti il momento esatto in cui devi completare un impegno.</p>
+                <div class="container">
+                    <button class="btmy" id="enableNotifications">Attiva</button> 
+                    <p></p>
+                    <button class="btmy" id="maybeLater">Magari più tardi</button>
+                    <p></p>
+                    <button id="disableNotifications">❌</button>
+                </div>
             </div>
         </div>
     </body>

@@ -1,0 +1,24 @@
+{
+    "name": "My Tasks",
+    "short_name": "My Tasks",
+    "lang": "en",
+    "description": "This apps helps you take note of your commitments.",
+    "icons": [
+        {
+            "src": "/mytasks/resources/192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/mytasks/resources/512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "scope": "/mytasks/",	
+    "start_url": "/mytasks/",
+    "orientation": "landscape",
+    "background_color": "#ff0000",
+    "display": "standalone",
+    "theme_color": "#ff0000"
+}

@@ -142,8 +142,9 @@ $(document).ready(function(){
 // Calls the "loadList" function when opening the page.
 loadList();
 
-// Creates a temporary JSON file to remember if the content is Editable.
+// Creates a temporary JSON file to remember if the content is Editable and if the form is focused.
 sessionStorage.setItem("contentEditable", "0");
+sessionStorage.setItem("formFocused", "1");
 
 // Tells the app if the form is focused.
 var form = document.getElementById("todo-entry-box");
@@ -161,6 +162,9 @@ $(document).ready(function(){
         if (e.key == "s" && sessionStorage.getItem("formFocused") != 1) {
             $("#save-button").removeClass("red");
             saveList();
+            if (localStorage.getItem("notificationsAre") != "granted" && localStorage.getItem("alreadyAskedNotifications") != 1 && sessionStorage.getItem("maybeLaterActive") != 1) {
+                $(".notificationask").removeClass("notshowing");
+            }
         }
     });
 });
@@ -181,17 +185,18 @@ $(document).ready(function(){
         if (e.key == "a" && sessionStorage.getItem("formFocused") != 1) {
             $("#save-button").addClass("red");
             emptyItems();
-            // window.location.href = "https://devlbd.github.io"
         }
     });
 });
 
+// Tells the app if the user has set English as their language.
 $(document).ready(function(){
     $("#langEng").click(function(){
         localStorage.setItem("hasSetItalian", "0");
     });
 });
 
+// Tells the app if the user has set Italian as their language.
 $(document).ready(function(){
     $("#langIta").click(function(){
         localStorage.setItem("hasSetItalian", "1");
@@ -215,6 +220,96 @@ $(document).ready(function(){
         }
     }, 250);
 });
+
+// If the user never enabled/disabled notifications, open notifications box when "Save your list" button is clicked.
+$(document).ready(function(){
+    $("#save-button").click(function() {
+        if (localStorage.getItem("notificationsAre") != "granted" && localStorage.getItem("alreadyAskedNotifications") != 1 && sessionStorage.getItem("maybeLaterActive") != 1) {
+            $(".notificationask").removeClass("notshowing");
+        }
+    });
+});
+
+// If the user accepts to enable notifications, Chrome will ask the user the permission.
+$(document).ready(function(){
+    $("#enableNotifications").click(function(){
+        if (!("Notification" in window)) {
+            if (sessionStorage.getItem("pageIsItalian") != 1) {
+                alert("Sorry, your browser does not support notifications.");    
+            } else {
+                alert("Spiacente, il tuo browser non supporta le notifiche.");    
+            }
+            $("notificationask").addClass("notshowing");
+            localStorage.setItem("alreadyAskedNotifications", "1");
+        } else {
+            Notification.requestPermission().then(function(result){
+                console.log("Notifications are " + result + ".");
+                $(".notificationask").addClass("notshowing");
+                localStorage.setItem("notificationsAre", result);
+            });
+            notify("Good news! Notifications are now granted.");
+        }
+        localStorage.setItem("alreadyAskedNotifications", "1");
+    });
+});
+
+// If the user does not accept, hide dialog box.
+$(document).ready(function(){
+    $("#disableNotifications").click(function(){
+        localStorage.setItem("notificationsAre", "notgranted");
+        localStorage.setItem("alreadyAskedNotifications", "1");
+        $(".notificationask").addClass("notshowing");
+    });
+});
+
+// If the user decides to choose later, hide dialog box and ask the next time.
+$(document).ready(function(){
+    $("#maybeLater").click(function(){
+        sessionStorage.setItem("maybeLaterActive", "1");
+        localStorage.setItem("alreadyAskedNotifications", "0");
+        $(".notificationask").addClass("notshowing");
+    });
+});
+
+// When the user clicks on the bell icon, show the dialog box again.
+$(document).ready(function(){
+    $(".bell").click(function(){
+        $(".notificationask").removeClass("notshowing");
+        localStorage.removeItem("alreadyAskedNotifications");
+        localStorage.removeItem("notificationsAre");
+    });
+});
+
+// Function that notifies the person.
+function notify(message) {
+    if (!("Notification" in window)) {
+        if (sessionStorage.getItem("pageIsItalian") != 1) {
+            alert("Sorry, your browser does not support notifications.");    
+        } else {
+            alert("Spiacente, il tuo browser non supporta le notifiche.");    
+        }
+    }
+    else if (Notification.permission === "granted") {
+        if (localStorage.getItem("hasSetItalian") != 1) {
+            var title = "Reminder from My Tasks.";
+            var text = "Looks like you have something to do right now. Tap to check.";
+        } else {
+            var title = "Promemoria da My Tasks.";
+            var text = "Sembra che abbia qualcosa da fare proprio ora. Clicca per controllare.";
+            var img = "/resources/twttr.png";
+        }
+        var notification = new Notification(title, { body: text, icon: img});
+    }
+
+    else if (Notification.permission !== "denied") {
+        Notification.requestPermission(function(permission) {
+            if (permission === "granted") {
+                var notificationapproved = new Notification(message);
+            }
+        });
+    }
+}
+
 
 // Made with love in Pescara, Italy.
 // Copyright © 2019, Lorenzo Barretta.
