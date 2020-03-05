@@ -1,6 +1,6 @@
 self.addEventListener("install", function(e){
     e.waitUntil(
-        caches.open("mytasks").then(function(cache){
+        caches.open("mytasks-v7").then(function(cache){
             return cache.addAll([
 		        "/mytasks/",
                 "/mytasks/index",
@@ -32,4 +32,23 @@ self.addEventListener("fetch", function(event){
             return response || fetch(event.request);
         })
     );
+});
+
+self.addEventListener("activate", function(event){
+    var cacheWhiteList = ["mytasks-v7"];
+    
+    event.waitUntil(
+        caches.keys().then(function(cacheNames){
+            return Promise.all(
+                cacheNames.map(function(cacheName){
+                    console.log("Deteleting Cache.");
+                    if (cacheWhiteList.indexOf(cacheName) === -1) {
+                        return caches.delete(cacheName);
+                    }
+                })
+            );
+        })
+    );
+    console.log("Cache deleted.");
+    console.log("Update completed.");
 });
