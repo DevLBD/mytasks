@@ -1,6 +1,6 @@
 self.addEventListener("install", function(e){
     e.waitUntil(
-        caches.open("mytasks-v7-1").then(function(cache){
+        caches.open("mytasks-v7-2").then(function(cache){
             return cache.addAll([
 		        "/mytasks/",
                 "/mytasks/index",
@@ -35,7 +35,7 @@ self.addEventListener("fetch", function(event){
 });
 
 self.addEventListener("activate", function(event){
-    var cacheWhiteList = ["mytasks-v7-1"];
+    var cacheWhiteList = ["mytasks-v7-2"];
     
     event.waitUntil(
         caches.keys().then(function(cacheNames){
