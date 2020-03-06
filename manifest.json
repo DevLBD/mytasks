@@ -19,8 +19,8 @@
     ],
     "scope": "/mytasks/",	
     "start_url": "/mytasks/",
-    "orientation": "minimal-ui",
+    "orientation": "portrait",
     "background_color": "#ff0000",
-    "display": "standalone",
+    "display": "minimal-ui",
     "theme_color": "#ff0000"
 }
