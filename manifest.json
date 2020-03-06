@@ -1,6 +1,6 @@
 {
     "name": "My Tasks",
-    "short_name": "My Tasks",
+    "short_name": "Notes",
     "lang": "en",
     "description": "This apps helps you take note of your commitments.",
     "icons": [
@@ -19,7 +19,7 @@
     ],
     "scope": "/mytasks/",	
     "start_url": "/mytasks/",
-    "orientation": "portrait",
+    "orientation": "minimal-ui",
     "background_color": "#ff0000",
     "display": "standalone",
     "theme_color": "#ff0000"
