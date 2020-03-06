@@ -119,5 +119,15 @@ function changeThemeColorRed() {
   metaThemeColor.setAttribute("content", "red");
 }
 
+// Checks if the PWA is opened as an app/browser tab and changes its title.
+window.addEventListener("load", () => {
+  if (matchMedia("(display-mode: minimal-ui)").matches) {
+      console.log("Launched as an App.");
+      document.title = "Notes.";
+  } else {
+      console.log("Launched as a Browser Tab.");
+  }
+});
+
 // Made with love in Pescara, Italy.
 // Copyright © 2019, Lorenzo Barretta.
