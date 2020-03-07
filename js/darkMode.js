@@ -130,7 +130,7 @@ window.addEventListener("load", () => {
 });
 
 // Checks if PWA is Installed.
-window.addEventListener("appinstalled", () => {
+window.addEventListener("appinstalled", function() {
   console.log("The PWA is installed.");
   sessionStorage.setItem("isAppInstalled", "1");
 });
