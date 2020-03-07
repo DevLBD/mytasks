@@ -420,6 +420,23 @@ a:hover {
 }
 
 a.aLanguages {
+  color: black;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 17px;
+  transition: all 0.3s ease 0s;
+}
+
+a.aLanguages.active {
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 17px;
+  transition: all 0.3s ease 0s;
+}
+
+a.aLanguages.open {
+  color: white;
   text-decoration: none;
   font-weight: 800;
   font-size: 17px;
@@ -431,7 +448,7 @@ a.aLanguages:hover {
   transition: all 0.3s ease 0s;
   border: none;
   border-radius: 15px;
-  background-color: rgba(44, 44, 44, 0.438);
+  background-color: rgb(22, 22, 22);
 }
 
 a.mail {
@@ -486,9 +503,11 @@ a.mail {
 .languages {
   border-radius: 20px;
   border: none;
-  background-color: black;
-  width: 190px;
+  background-color: white;
+  color: black;
+  width: 445px;
   height: 45px;
+  margin-left: 15px;
   transition: all 0.3s ease 0s;
   box-shadow: 0px 15px 20px rgba(2, 2, 2, 0.212);
 }
@@ -497,8 +516,6 @@ a.mail {
   border-radius: 20px;
   border: none;
   background-color: black;
-  width: 190px;
-  height: 45px;
   transition: all 0.3s ease 0s;
   box-shadow: 0px 15px 20px rgba(119, 119, 119, 0.212);
 }
@@ -506,9 +523,7 @@ a.mail {
 .languages:hover {
   border-radius: 20px;
   border: none;
-  background-color: black;
-  width: 190px;
-  height: 45px;
+  background-color: white;
   transform: translateY(-1px);
   transition: all 0.3s ease 0s;
   box-shadow: 0px 15px 20px rgba(2, 2, 2, 0.37);  
@@ -518,13 +533,20 @@ a.mail {
   border-radius: 20px;
   border: none;
   background-color: black;
-  width: 190px;
-  height: 45px;
   transition: all 0.3s ease 0s;
   box-shadow: 0px 15px 20px rgba(184, 184, 184, 0.301); 
 }
 
 .active {
+  color: white;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(26, 26, 26);
+  width: 80px;
+  height: 5px;
+}
+
+.active.open {
   border-radius: 10px;
   border: none;
   background-color: rgb(26, 26, 26);
