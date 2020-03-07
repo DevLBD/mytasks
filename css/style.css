@@ -501,7 +501,7 @@ a.mail {
 }
 
 .languages {
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   background-color: white;
   color: black;
@@ -514,15 +514,15 @@ a.mail {
 }
 
 .languages.open {
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
-  background-color: black;
+  background-color: rgb(20, 20, 20);
   transition: all 0.3s ease 0s;
   box-shadow: 0px 15px 20px rgba(119, 119, 119, 0.212);
 }
 
 .languages:hover {
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   background-color: white;
   transform: translateY(-1px);
@@ -531,9 +531,9 @@ a.mail {
 }
 
 .languages.open:hover {
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
-  background-color: black;
+  background-color: rgb(20, 20, 20);
   transition: all 0.3s ease 0s;
   box-shadow: 0px 15px 20px rgba(184, 184, 184, 0.301); 
 }
