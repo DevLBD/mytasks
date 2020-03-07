@@ -550,7 +550,7 @@ a.mail {
 .active.open {
   border-radius: 10px;
   border: none;
-  background-color: rgb(26, 26, 26);
+  background-color: rgb(34, 34, 34);
   width: 80px;
   height: 5px;
 }
