@@ -6,6 +6,7 @@
 - Mark tasks as completed to track what you've done.
 - Save your list on your favorite device to it them for later.
 - Activate the Dark Mode to protect your eyes or to use the app in a new stylish way.
+- Install the PWA for offline support!
 
 *Updated weekly!*
 
