@@ -122,16 +122,17 @@ function changeThemeColorRed() {
 // Checks if PWA is Installed.
 window.addEventListener("appinstalled", function() {
   console.log("The PWA is installed.");
-  sessionStorage.setItem("isAppInstalled", "1");
+  localStorage.setItem("isAppInstalled", "1");
 });
 
 // Checks if the PWA is opened as an app/browser tab and changes its title.
 window.addEventListener("load", () => {
-  if (matchMedia("(display-mode: minimal-ui)").matches || sessionStorage.getItem("isAppInstalled") == 1) {
+  if (matchMedia("(display-mode: minimal-ui)").matches || localStorage.getItem("isAppInstalled") == 1) {
       console.log("Launched as an App.");
       document.title = "Notes.";
   } else {
       console.log("Launched as a Browser Tab.");
+      localStorage.removeItem("isAppInstalled");
   }
 });
 
