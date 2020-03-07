@@ -119,6 +119,12 @@ function changeThemeColorRed() {
   metaThemeColor.setAttribute("content", "red");
 }
 
+// Checks if PWA is Installed.
+window.addEventListener("appinstalled", function() {
+  console.log("The PWA is installed.");
+  sessionStorage.setItem("isAppInstalled", "1");
+});
+
 // Checks if the PWA is opened as an app/browser tab and changes its title.
 window.addEventListener("load", () => {
   if (matchMedia("(display-mode: minimal-ui)").matches || sessionStorage.getItem("isAppInstalled") == 1) {
@@ -129,11 +135,6 @@ window.addEventListener("load", () => {
   }
 });
 
-// Checks if PWA is Installed.
-window.addEventListener("appinstalled", function() {
-  console.log("The PWA is installed.");
-  sessionStorage.setItem("isAppInstalled", "1");
-});
 
 // Made with love in Pescara, Italy.
 // Copyright © 2019, Lorenzo Barretta.
