@@ -121,12 +121,18 @@ function changeThemeColorRed() {
 
 // Checks if the PWA is opened as an app/browser tab and changes its title.
 window.addEventListener("load", () => {
-  if (matchMedia("(display-mode: minimal-ui)").matches) {
+  if (matchMedia("(display-mode: minimal-ui)").matches || sessionStorage.getItem("isAppInstalled") == 1) {
       console.log("Launched as an App.");
       document.title = "Notes.";
   } else {
       console.log("Launched as a Browser Tab.");
   }
+});
+
+// Checks if PWA is Installed.
+window.addEventListener("appinstalled", () => {
+  console.log("The PWA is installed.");
+  sessionStorage.setItem("isAppInstalled", "1");
 });
 
 // Made with love in Pescara, Italy.
