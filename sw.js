@@ -1,6 +1,6 @@
 self.addEventListener("install", function(e){
     e.waitUntil(
-        caches.open("mytasks-v7-4-4").then(function(cache){
+        caches.open("mytasks-v7-4-5").then(function(cache){
             return cache.addAll([
 		        "/mytasks/",
                 "/mytasks/index",
@@ -35,7 +35,7 @@ self.addEventListener("fetch", function(event){
 });
 
 self.addEventListener("activate", function(event){
-    var cacheWhiteList = ["mytasks-v7-4-4"];
+    var cacheWhiteList = ["mytasks-v7-4-5"];
     
     event.waitUntil(
         caches.keys().then(function(cacheNames){
@@ -49,6 +49,4 @@ self.addEventListener("activate", function(event){
             );
         })
     );
-    console.log("Cache deleted.");
-    console.log("Update completed.");
 });
