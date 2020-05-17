@@ -45,7 +45,7 @@ html.open {
     background: white;
     color: white;
     width: 440px;
-    height: 595px;
+    height: 100%;
     box-shadow: 0px 15px 20px rgba(2, 2, 2, 0.212);
     transition: all 0.3s ease 0s;
 }
