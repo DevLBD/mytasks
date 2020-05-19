@@ -4,6 +4,7 @@ var itsEvening = 0;
 var data = new Date();
 var hours = data.getHours();
 var metaThemeColor = document.querySelector("meta[name=theme-color]");
+var metaAppleColor = document.querySelector("meta[name=apple-mobile-web-app-status-bar-style]");
 
 // Checks if it's evening/night, if a preference is set, and if it returns "true", toggles Dark Mode.
 if (localStorage.getItem("preferenceSet") != 1 && hours >= 19 || hours <= 06) {
@@ -115,11 +116,13 @@ $(document).ready(function(){
 // Changes the theme color tag when Dark Mode is activated. (Only on Mobile).
 function changeThemeColorBlue() {
   metaThemeColor.setAttribute("content", "rgb(0, 35, 110)");
+  metaAppleColor.setAttribute("content", "rgb(0, 35, 110)")
 }
 
 // Changes the theme color tag when Dark Mode is deactivated. (Only on Mobile).
 function changeThemeColorRed() {
   metaThemeColor.setAttribute("content", "red");
+  metaAppleColor.setAttribute("content", "red");
 }
 
 // Checks if PWA is Installed.
