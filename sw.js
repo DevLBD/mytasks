@@ -1,6 +1,6 @@
 self.addEventListener("install", function(e){
     e.waitUntil(
-        caches.open("mytasks-v8-0-0").then(function(cache){
+        caches.open("mytasks-v8-0-1").then(function(cache){
             return cache.addAll([
 		        "/mytasks/",
                 "/mytasks/index",
@@ -35,7 +35,7 @@ self.addEventListener("fetch", function(event){
 });
 
 self.addEventListener("activate", function(event){
-    var cacheWhiteList = ["mytasks-v8-0-0"];
+    var cacheWhiteList = ["mytasks-v8-0-1"];
     
     event.waitUntil(
         caches.keys().then(function(cacheNames){
@@ -50,3 +50,13 @@ self.addEventListener("activate", function(event){
         })
     );
 });
+
+if (navigator.share) {
+    navigator.share({
+      title: "Notes, by @DevLBD.",
+      text: "It is a simple web app that help you take note of your commitments and tasks. Click 'Add to Homescreen' for easy access.",
+      url: "https://devlbd.github.io/mytasks",
+    })
+      .then(() => console.log('Successful share'))
+      .catch((error) => console.log('Error sharing', error));
+  }
