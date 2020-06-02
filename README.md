@@ -1,4 +1,4 @@
-# Notes, by Lorenzo Barretta (@DevLBD).
+# Notes, by Lorenzo Barretta.
 ## A simple Web App that helps you remember your commitments and tasks by Lorenzo Barretta, (@dev.lbd).
 
 #### Features:
