@@ -17,8 +17,8 @@
             "purpose": "maskable any"
         }
     ],
-    "scope": "/mytasks/",	
-    "start_url": "/mytasks/",
+    "scope": "https://devlbd.github.io/mytasks/",	
+    "start_url": "https://devlbd.github.io/mytasks/",
     "orientation": "portrait",
     "background_color": "#ff0000",
     "display": "minimal-ui",
