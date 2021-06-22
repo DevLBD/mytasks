@@ -35,7 +35,7 @@ self.addEventListener("fetch", function(event){
 });
 
 self.addEventListener("activate", function(event){
-    var cacheWhiteList = ["mytasks-v8-0-2", "gumroad-calculator-v2-1"];
+    var cacheWhiteList = ["mytasks-v8-0-2", "gumroad-calculator-v2-2"];
     
     event.waitUntil(
         caches.keys().then(function(cacheNames){
